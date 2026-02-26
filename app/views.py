@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+from datetime import datetime
 
 
 ###
@@ -45,3 +46,13 @@ def add_header(response):
 def page_not_found(error):
     """Custom 404 page."""
     return render_template('404.html'), 404
+
+@app.route('/profile')
+def profile():
+    date_joined = datetime.now()  # get current date
+    formatted_date = format_date_joined(date_joined)
+
+    return render_template("profile.html", joined=formatted_date)
+
+def format_date_joined(date):
+    return date.strftime("%b, %Y")

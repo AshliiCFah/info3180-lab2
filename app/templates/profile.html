@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="profile-wrapper">
+  <div class="profile-card">
+    <div class="profile-header">
+      <div class="avatar-wrap">
+        <img src="{{ url_for('static', filename='profile.png') }}" alt="Profile" class="avatar">
+      </div>
+
+      <h1 class="name">Ashley Chung - Fah</h1>
+      <p class="handle">@achung</p>
+      <p class="meta">Kingston, Jamaica</p>
+      <p class="meta">Joined {{ joined }}</p>
+    </div>
+
+    <div class="profile-bio">
+      <p>
+        I am a smart and talented young woman who loves website design and development.
+        Contact me if you'd like to work together on a new project.
+      </p>
+    </div>
+
+    <div class="profile-stats">
+      <div class="stat">
+        <div class="stat-num">7</div>
+        <div class="stat-label">Posts</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">100</div>
+        <div class="stat-label">Following</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">250</div>
+        <div class="stat-label">Followers</div>
+      </div>
+    </div>
+
+    <div class="profile-action">
+      <button class="follow-btn">Follow</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
